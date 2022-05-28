@@ -1,9 +1,10 @@
 import { CheckboxItem } from '../Molecules/CheckboxItem';
 type PrefectureNameList = {
-	prefectures: {
-		prefName: string;
-		prefCode: number;
-	}[];
+	prefectures:
+		| {
+				prefName: string;
+				prefCode: number;
+		  }[];
 };
 
 export const CheckboxList: React.VFC<PrefectureNameList> = (props) => {
