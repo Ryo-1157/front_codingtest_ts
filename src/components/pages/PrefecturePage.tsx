@@ -1,18 +1,28 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
-import { getPrefectures } from '../../Middleware';
+import { getPopulation, getPrefectures } from '../../Middleware';
 import { CheckboxList } from '../Organisms/CheckboxList';
 import { Graph } from '../Organisms/Graph';
-
-type Prefecture = {
-	prefName: string;
-	prefCode: number;
-};
 
 type PrefectureResponse = {
 	result: [];
 	message: null;
 };
+
+type PopulationResponse = {
+	result: {
+		boundaryYear: 2015;
+		data: {
+			label: string;
+			data: {
+				year: number;
+				value: number;
+			}[];
+		}[];
+	};
+};
+
+type Population = { prefName: string; data: { year: number; value: number }[] };
 
 export const PrefecturePage: React.VFC = () => {
 	const [prefectures, setPrefectures] = useState<{
@@ -21,9 +31,7 @@ export const PrefecturePage: React.VFC = () => {
 			prefName: string;
 		}[];
 	} | null>(null);
-	const [prefPopulation, setPrefPopulation] = useState<{ prefName: string; data: { year: number; value: number }[] }[]>(
-		[]
-	);
+	const [prefPopulation, setPrefPopulation] = useState<Population[]>([]);
 
 	useEffect(() => {
 		getPrefectures()
@@ -35,14 +43,35 @@ export const PrefecturePage: React.VFC = () => {
 			});
 	}, []);
 
-	const onChangeTest = (): void => {
-		alert('clicked!');
+	const handleClickCheck = (prefName: string, prefCode: number, check: boolean) => {
+		const populationList = prefPopulation.slice();
+		if (check) {
+			if (populationList.findIndex((value) => value.prefName === prefName) !== -1) return;
+
+			getPopulation(prefCode)
+				.then((res: AxiosResponse<PopulationResponse>) => {
+					populationList.push({
+						prefName: prefName,
+						data: res.data.result.data[0].data,
+					});
+
+					setPrefPopulation(populationList);
+				})
+				.catch((error: AxiosError<{ error: string }>) => {
+					return;
+				});
+		} else {
+			const deleteIndex = populationList.findIndex((value) => value.prefName === prefName);
+			if (deleteIndex === -1) return;
+			populationList.splice(deleteIndex, 1);
+			setPrefPopulation(populationList);
+		}
 	};
 
 	return (
 		<main>
-			{prefectures && <CheckboxList prefectures={prefectures.result} onChange={onChangeTest} />}
 			<Graph populationdata={prefPopulation} />
+			{prefectures && <CheckboxList prefectures={prefectures.result} onChange={handleClickCheck} />}
 		</main>
 	);
 };
