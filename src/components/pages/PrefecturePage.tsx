@@ -1,5 +1,6 @@
+import { AxiosError, AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
-import { getPopulation, getPrefectures } from '../../Middleware';
+import { getPrefectures } from '../../Middleware';
 import { CheckboxList } from '../Organisms/CheckboxList';
 import { Graph } from '../Organisms/Graph';
 
@@ -9,13 +10,12 @@ type Prefecture = {
 };
 
 type PrefectureResponse = {
-	result: Prefecture[];
+	result: [];
 	message: null;
 };
 
 export const PrefecturePage: React.VFC = () => {
 	const [prefectures, setPrefectures] = useState<{
-		message: null;
 		result: {
 			prefCode: number;
 			prefName: string;
@@ -27,10 +27,10 @@ export const PrefecturePage: React.VFC = () => {
 
 	useEffect(() => {
 		getPrefectures()
-			.then((res) => {
+			.then((res: AxiosResponse<PrefectureResponse>) => {
 				setPrefectures(res.data);
 			})
-			.catch((err) => {
+			.catch((err: AxiosError<{ error: string }>) => {
 				console.log(err);
 			});
 	}, []);

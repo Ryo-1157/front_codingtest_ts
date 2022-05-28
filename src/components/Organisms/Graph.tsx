@@ -9,13 +9,13 @@ type Props = {
 };
 
 export const Graph: React.VFC<Props> = ({ populationdata }) => {
-	let series: Highcharts.SeriesOptionsType[] = [];
-	let categories: string[] = [];
+	const series: Highcharts.SeriesOptionsType[] = [];
+	const categories: string[] = [];
 
-	for (let p of populationdata) {
-		let data: number[] = [];
+	for (const p of populationdata) {
+		const data: number[] = [];
 
-		for (let pd of p.data) {
+		for (const pd of p.data) {
 			data.push(pd.value);
 			categories.push(String(pd.year));
 		}

@@ -1,5 +1,7 @@
+import { PrefecturePage } from './components/pages/PrefecturePage';
+
 function App() {
-	return <div></div>;
+	return <PrefecturePage />;
 }
 
 export default App;
