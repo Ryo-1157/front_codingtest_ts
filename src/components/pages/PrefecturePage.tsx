@@ -35,9 +35,13 @@ export const PrefecturePage: React.VFC = () => {
 			});
 	}, []);
 
+	const onChangeTest = (): void => {
+		alert('clicked!');
+	};
+
 	return (
 		<main>
-			{prefectures && <CheckboxList prefectures={prefectures.result} />}
+			{prefectures && <CheckboxList prefectures={prefectures.result} onChange={onChangeTest} />}
 			<Graph populationdata={prefPopulation} />
 		</main>
 	);
