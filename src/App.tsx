@@ -1,4 +1,4 @@
-import { Header } from './components/layouts/Header';
+import { Header } from './components/Layouts/Header';
 import { PrefecturePage } from './components/pages/PrefecturePage';
 
 function App() {
