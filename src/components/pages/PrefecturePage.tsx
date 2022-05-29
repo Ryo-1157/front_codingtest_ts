@@ -25,6 +25,7 @@ export const PrefecturePage: React.VFC = () => {
 
 					setPrefPopulation(populationList);
 				})
+				// eslint-disable-next-line
 				.catch((error: AxiosError<{ error: string }>) => {
 					return;
 				});
