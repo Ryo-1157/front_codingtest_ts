@@ -1,23 +1,15 @@
 import { AxiosError, AxiosResponse } from 'axios';
-import { useEffect, useState } from 'react';
-import { getPopulation, getPrefectures } from '../../Middleware';
-import { Population, PopulationResponse, PrefectureResponse, PrefecturesState } from '../../type';
+import { useState } from 'react';
+import { useSetPrefecture } from '../../hooks/useSetPregecture';
+import { getPopulation } from '../../Middleware';
+import { Population, PopulationResponse } from '../../type';
 import { CheckboxList } from '../Organisms/CheckboxList';
 import { Graph } from '../Organisms/Graph';
 
 export const PrefecturePage: React.VFC = () => {
-	const [prefectures, setPrefectures] = useState<PrefecturesState | null>(null);
 	const [prefPopulation, setPrefPopulation] = useState<Population[]>([]);
 
-	useEffect(() => {
-		getPrefectures()
-			.then((res: AxiosResponse<PrefectureResponse>) => {
-				setPrefectures(res.data);
-			})
-			.catch((err: AxiosError<{ error: string }>) => {
-				console.log(err);
-			});
-	}, []);
+	const { prefectures } = useSetPrefecture();
 
 	const handleClickCheck = (prefName: string, prefCode: number, check: boolean) => {
 		const populationList = prefPopulation.slice();
