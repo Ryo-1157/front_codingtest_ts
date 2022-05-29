@@ -11,7 +11,7 @@ export const PrefecturePage: React.VFC = () => {
 
 	const { prefectures } = useSetPrefecture();
 
-	const handleClickCheck = (prefName: string, prefCode: number, check: boolean) => {
+	const onChangeChecked = (prefName: string, prefCode: number, check: boolean) => {
 		const populationList = prefPopulation.slice();
 		if (check) {
 			if (populationList.findIndex((value) => value.prefName === prefName) !== -1) return;
@@ -40,7 +40,7 @@ export const PrefecturePage: React.VFC = () => {
 	return (
 		<main>
 			<Graph populationdata={prefPopulation} />
-			{prefectures && <CheckboxList prefectures={prefectures.result} onChange={handleClickCheck} />}
+			{prefectures && <CheckboxList prefectures={prefectures.result} onChange={onChangeChecked} />}
 		</main>
 	);
 };
