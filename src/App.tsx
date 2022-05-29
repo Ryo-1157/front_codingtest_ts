@@ -1,7 +1,13 @@
+import { Header } from './components/layouts/Header';
 import { PrefecturePage } from './components/pages/PrefecturePage';
 
 function App() {
-	return <PrefecturePage />;
+	return (
+		<>
+			<Header headerText="hoge" />
+			<PrefecturePage />
+		</>
+	);
 }
 
 export default App;

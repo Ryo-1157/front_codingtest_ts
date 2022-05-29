@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 export const Header: React.VFC<{ headerText: string }> = (props) => {
 	const { headerText } = props;
 	return (
