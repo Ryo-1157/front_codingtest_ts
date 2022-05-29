@@ -1,36 +1,12 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
 import { getPopulation, getPrefectures } from '../../Middleware';
+import { Population, PopulationResponse, PrefectureResponse, PrefecturesState } from '../../type';
 import { CheckboxList } from '../Organisms/CheckboxList';
 import { Graph } from '../Organisms/Graph';
 
-type PrefectureResponse = {
-	result: [];
-	message: null;
-};
-
-type PopulationResponse = {
-	result: {
-		boundaryYear: 2015;
-		data: {
-			label: string;
-			data: {
-				year: number;
-				value: number;
-			}[];
-		}[];
-	};
-};
-
-type Population = { prefName: string; data: { year: number; value: number }[] };
-
 export const PrefecturePage: React.VFC = () => {
-	const [prefectures, setPrefectures] = useState<{
-		result: {
-			prefCode: number;
-			prefName: string;
-		}[];
-	} | null>(null);
+	const [prefectures, setPrefectures] = useState<PrefecturesState | null>(null);
 	const [prefPopulation, setPrefPopulation] = useState<Population[]>([]);
 
 	useEffect(() => {

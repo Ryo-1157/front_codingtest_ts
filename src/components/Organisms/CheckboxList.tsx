@@ -1,12 +1,5 @@
+import { PrefectureNameList } from '../../type';
 import { CheckboxItem } from '../Molecules/CheckboxItem';
-type PrefectureNameList = {
-	prefectures:
-		| {
-				prefName: string;
-				prefCode: number;
-		  }[];
-	onChange: (name: string, prefName: number, check: boolean) => void;
-};
 
 export const CheckboxList: React.VFC<PrefectureNameList> = (props) => {
 	const { prefectures, onChange } = props;

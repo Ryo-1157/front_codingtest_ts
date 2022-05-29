@@ -1,9 +1,4 @@
-type Prefecture = {
-	prefCode: number;
-	prefName: string;
-
-	onChange: (name: string, prefName: number, check: boolean) => void;
-};
+import { Prefecture } from '../../type';
 
 export const CheckboxInput: React.VFC<Prefecture> = (props) => {
 	const { prefCode, prefName, onChange } = props;

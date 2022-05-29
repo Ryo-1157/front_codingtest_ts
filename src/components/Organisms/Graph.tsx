@@ -1,14 +1,8 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import { GraphProps } from '../../type';
 
-type Props = {
-	populationdata: {
-		prefName: string;
-		data: { year: number; value: number }[];
-	}[];
-};
-
-export const Graph: React.VFC<Props> = ({ populationdata }) => {
+export const Graph: React.VFC<GraphProps> = ({ populationdata }) => {
 	const series: Highcharts.SeriesOptionsType[] = [];
 	const categories: string[] = [];
 

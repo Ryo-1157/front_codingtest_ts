@@ -25,6 +25,7 @@ module.exports = {
 	plugins: ['react', '@typescript-eslint', 'unused-imports'],
 	ignorePatterns: ['build'],
 	rules: {
+		'@typescript-eslint/no-unsafe-member-access': 'error',
 		'react/prop-types': 'off',
 		'no-use-before-define': 'off',
 		'@typescript-eslint/no-use-before-define': ['error'],

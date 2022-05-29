@@ -1,10 +1,4 @@
-type Prefecture = {
-	prefCode: number;
-	prefName: string;
-
-	onChange: (name: string, prefName: number, check: boolean) => void;
-};
-
+import { Prefecture } from '../../type';
 import { CheckboxInput } from '../Atoms/CheckboxInput';
 import { CheckboxLabel } from '../Atoms/CheckboxLabel';
 
