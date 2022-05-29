@@ -5,6 +5,7 @@ import { getPopulation } from '../../Middleware';
 import { Population, PopulationResponse } from '../../type';
 import { CheckboxList } from '../Organisms/CheckboxList';
 import { Graph } from '../Organisms/Graph';
+import styles from '../../styles/Pages/PrefecturePage.module.scss';
 
 export const PrefecturePage: React.VFC = () => {
 	const [prefPopulation, setPrefPopulation] = useState<Population[]>([]);
@@ -38,7 +39,7 @@ export const PrefecturePage: React.VFC = () => {
 	};
 
 	return (
-		<main>
+		<main className={styles.main_bg}>
 			<Graph populationdata={prefPopulation} />
 			{prefectures && <CheckboxList prefectures={prefectures.result} onChange={onChangeChecked} />}
 		</main>
