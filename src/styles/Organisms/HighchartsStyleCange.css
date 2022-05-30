@@ -1,0 +1,13 @@
+.highcharts-background {
+	fill: rgba(255, 255, 255, 0.2);
+	filter: blur(2px);
+}
+.highcharts-axis-labels text,
+.highcharts-axis text,
+.highcharts-title,
+.highcharts-legend-item text {
+	fill: #ffffff !important;
+}
+.highcharts-root {
+	border-radius: 15px;
+}

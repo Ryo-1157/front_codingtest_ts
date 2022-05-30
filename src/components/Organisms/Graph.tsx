@@ -1,6 +1,8 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { GraphProps } from '../../type';
+import styles from '../../styles/Organisms/Graph.module.scss';
+import '../../styles/Organisms/HighchartsStyleCange.css';
 
 export const Graph: React.VFC<GraphProps> = ({ populationdata }) => {
 	const series: Highcharts.SeriesOptionsType[] = [];
@@ -39,7 +41,7 @@ export const Graph: React.VFC<GraphProps> = ({ populationdata }) => {
 	};
 
 	return (
-		<figure>
+		<figure className={styles.graph_wrap}>
 			<HighchartsReact highcharts={Highcharts} options={options} />
 		</figure>
 	);

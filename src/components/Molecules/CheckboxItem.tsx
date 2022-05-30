@@ -6,11 +6,9 @@ export const CheckboxItem: React.VFC<Prefecture> = (props) => {
 	const { prefCode, prefName, onChange } = props;
 	return (
 		<>
-			<>
-				<CheckboxLabel prefCode={prefCode} prefName={prefName}>
-					<CheckboxInput prefCode={prefCode} prefName={prefName} onChange={onChange} />
-				</CheckboxLabel>
-			</>
+			<CheckboxLabel prefCode={prefCode} prefName={prefName}>
+				<CheckboxInput prefCode={prefCode} prefName={prefName} onChange={onChange} />
+			</CheckboxLabel>
 		</>
 	);
 };

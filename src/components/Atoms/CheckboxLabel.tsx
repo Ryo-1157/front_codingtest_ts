@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import styles from '../../styles/Atoms/CheckboxLabel.module.scss';
 
 type Prefecture = {
 	prefCode: number;
@@ -9,7 +10,7 @@ type Prefecture = {
 export const CheckboxLabel: React.VFC<Prefecture> = (props) => {
 	const { prefCode, prefName, children } = props;
 	return (
-		<label htmlFor={`prefCode-${prefCode}`}>
+		<label htmlFor={`prefCode-${prefCode}`} className={styles.bl_checkBpxLabel}>
 			{children}
 			{prefName}
 		</label>
