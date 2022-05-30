@@ -31,6 +31,7 @@ module.exports = {
 		'@typescript-eslint/no-use-before-define': ['error'],
 		'import/prefer-default-export': 'off',
 		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/restrict-template-expressions': 'off',
 		'unused-imports/no-unused-imports': 'error',
 		'unused-imports/no-unused-vars': [
 			'warn',

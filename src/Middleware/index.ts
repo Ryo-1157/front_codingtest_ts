@@ -2,6 +2,10 @@ import axios from 'axios';
 
 const BASE_URL = 'https://opendata.resas-portal.go.jp/api/v1';
 
+type hoge = {
+	REACT_APP_API_KEY: string;
+};
+
 export const getPrefectures = () => {
 	return axios.get(`${BASE_URL}/prefectures`, {
 		headers: { 'X-API-KEY': `${process.env.REACT_APP_API_KEY}` },
