@@ -11,6 +11,13 @@
 	-webkit-backdrop-filter: blur(6.8px);
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	transition: background 0.15s;
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
 	&:hover {
 		background: rgba(255, 255, 255, 0.13);
 		transition: background 0.15s;
