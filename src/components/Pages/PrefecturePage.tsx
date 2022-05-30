@@ -11,7 +11,7 @@ export const PrefecturePage: React.VFC = () => {
 	return (
 		<main className={styles.main_bg}>
 			<Graph populationdata={prefPopulation} />
-			{prefectures && <CheckboxList prefectures={prefectures.result} onChange={onChangeChecked} />}
+			{prefectures && <CheckboxList prefectures={prefectures} onChange={onChangeChecked} />}
 		</main>
 	);
 };
