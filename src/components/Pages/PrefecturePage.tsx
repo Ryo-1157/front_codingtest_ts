@@ -3,8 +3,9 @@ import { CheckboxList } from '../Organisms/CheckboxList';
 import { Graph } from '../Organisms/Graph';
 import styles from '../../styles/Pages/PrefecturePage.module.scss';
 import { useSetPrefPopulation } from '../../hooks/useSetPrefPopulation';
+import React from 'react';
 
-export const PrefecturePage: React.VFC = () => {
+export const PrefecturePage: React.VFC = React.memo(() => {
 	const { prefectures } = useSetPrefecture();
 	const { prefPopulation, onChangeChecked } = useSetPrefPopulation();
 
@@ -14,4 +15,4 @@ export const PrefecturePage: React.VFC = () => {
 			{prefectures && <CheckboxList prefectures={prefectures} onChange={onChangeChecked} />}
 		</main>
 	);
-};
+});

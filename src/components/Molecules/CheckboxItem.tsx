@@ -1,8 +1,9 @@
+import React from 'react';
 import { Prefecture } from '../../type';
 import { CheckboxInput } from '../Atoms/CheckboxInput';
 import { CheckboxLabel } from '../Atoms/CheckboxLabel';
 
-export const CheckboxItem: React.VFC<Prefecture> = (props) => {
+export const CheckboxItem: React.VFC<Prefecture> = React.memo((props) => {
 	const { prefCode, prefName, onChange } = props;
 	return (
 		<>
@@ -11,4 +12,4 @@ export const CheckboxItem: React.VFC<Prefecture> = (props) => {
 			</CheckboxLabel>
 		</>
 	);
-};
+});

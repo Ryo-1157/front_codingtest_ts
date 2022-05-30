@@ -3,8 +3,9 @@ import HighchartsReact from 'highcharts-react-official';
 import { GraphProps } from '../../type';
 import styles from '../../styles/Organisms/Graph.module.scss';
 import '../../styles/Organisms/HighchartsStyleCange.css';
+import React from 'react';
 
-export const Graph: React.VFC<GraphProps> = ({ populationdata }) => {
+export const Graph: React.VFC<GraphProps> = React.memo(({ populationdata }) => {
 	const series: Highcharts.SeriesOptionsType[] = [];
 	const categories: string[] = [];
 
@@ -48,4 +49,4 @@ export const Graph: React.VFC<GraphProps> = ({ populationdata }) => {
 			<HighchartsReact highcharts={Highcharts} options={options} />
 		</figure>
 	);
-};
+});

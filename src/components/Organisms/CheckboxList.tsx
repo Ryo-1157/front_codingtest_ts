@@ -1,18 +1,19 @@
 import { PrefectureNameList } from '../../type';
 import { CheckboxItem } from '../Molecules/CheckboxItem';
 import styles from '../../styles/Organisms/CheckboxList.module.scss';
+import React from 'react';
 
-export const CheckboxList: React.VFC<PrefectureNameList> = (props) => {
-	// const { prefectures, onChange } = props;
+export const CheckboxList: React.VFC<PrefectureNameList> = React.memo((props) => {
+	const { prefectures, onChange } = props;
 	return (
 		<>
 			<ul className={styles.bl_checkboxList}>
-				{props.prefectures.map((prefecture) => (
+				{prefectures.map((prefecture) => (
 					<li key={prefecture.prefCode} className={styles.bl_checkboxList_li}>
-						<CheckboxItem prefCode={prefecture.prefCode} prefName={prefecture.prefName} onChange={props.onChange} />
+						<CheckboxItem prefCode={prefecture.prefCode} prefName={prefecture.prefName} onChange={onChange} />
 					</li>
 				))}
 			</ul>
 		</>
 	);
-};
+});

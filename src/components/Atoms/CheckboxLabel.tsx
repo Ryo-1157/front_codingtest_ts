@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactNode } from 'react';
 import styles from '../../styles/Atoms/CheckboxLabel.module.scss';
 
@@ -7,7 +8,7 @@ type Prefecture = {
 	children: ReactNode;
 };
 
-export const CheckboxLabel: React.VFC<Prefecture> = (props) => {
+export const CheckboxLabel: React.VFC<Prefecture> = React.memo((props) => {
 	const { prefCode, prefName, children } = props;
 	return (
 		<label htmlFor={`prefCode-${prefCode}`} className={styles.bl_checkBpxLabel}>
@@ -15,4 +16,4 @@ export const CheckboxLabel: React.VFC<Prefecture> = (props) => {
 			{prefName}
 		</label>
 	);
-};
+});
