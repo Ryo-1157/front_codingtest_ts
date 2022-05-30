@@ -1,5 +1,6 @@
 .bl_checkBpxLabel {
 	color: #333333;
+	font-size: 14px;
 	padding: 0.3em 0.5em;
 	letter-spacing: 0.05em;
 	display: inline-block;
@@ -13,5 +14,11 @@
 	&:hover {
 		background: rgba(255, 255, 255, 0.13);
 		transition: background 0.15s;
+	}
+}
+
+@media screen and (min-width: 425px) {
+	.bl_checkBpxLabel {
+		font-size: 16px;
 	}
 }

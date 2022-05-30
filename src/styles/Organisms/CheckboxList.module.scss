@@ -6,8 +6,17 @@
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 5% auto 0;
+	height: calc(100vh - 520px);
+	overflow: scroll;
 	&_li {
 		display: inline-block;
-		margin: 5px;
+		margin: 0.3em 0.5em;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.bl_checkboxList {
+		height: 100%;
+		overflow: auto;
 	}
 }
