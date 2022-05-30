@@ -5,8 +5,8 @@
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
-	margin: 5% auto 0;
-	height: calc(100vh - 520px);
+	margin: 2% auto 0;
+	height: calc(100vh - 500px);
 	overflow: scroll;
 	&_li {
 		display: inline-block;
@@ -17,6 +17,6 @@
 @media screen and (min-width: 768px) {
 	.bl_checkboxList {
 		height: 100%;
-		overflow: auto;
+		overflow: unset;
 	}
 }
