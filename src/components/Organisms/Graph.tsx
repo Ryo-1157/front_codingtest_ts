@@ -23,6 +23,9 @@ export const Graph: React.VFC<GraphProps> = ({ populationdata }) => {
 		});
 	}
 	const options: Highcharts.Options = {
+		chart: {
+			height: 380,
+		},
 		title: {
 			text: '総人口推移',
 		},

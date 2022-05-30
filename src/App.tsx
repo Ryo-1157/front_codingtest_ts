@@ -5,7 +5,7 @@ import './styles/Global/reset.css';
 function App() {
 	return (
 		<>
-			<Header headerText="hoge" />
+			<Header headerText="都道府県別の総人口推移" />
 			<PrefecturePage />
 		</>
 	);
