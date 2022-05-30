@@ -1,6 +1,7 @@
 import { Header } from './components/Organisms/Header';
 import { PrefecturePage } from './components/Pages/PrefecturePage';
 import './styles/Global/reset.css';
+import './styles/Global/app.css';
 
 function App() {
 	return (
