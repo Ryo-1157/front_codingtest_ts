@@ -1,4 +1,4 @@
-import { Header } from './components/Layouts/Header';
+import { Header } from './components/Organisms/Header';
 import { PrefecturePage } from './components/Pages/PrefecturePage';
 import './styles/Global/reset.css';
 
