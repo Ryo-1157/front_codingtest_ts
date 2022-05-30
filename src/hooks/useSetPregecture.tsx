@@ -1,10 +1,10 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
 import { getPrefectures } from '../Middleware';
-import { PrefectureResponse } from '../type';
+import { PrefectureResponse, Prefecture } from '../type';
 
 export const useSetPrefecture = () => {
-	const [prefectures, setPrefectures] = useState<{ prefName: string; prefCode: number }[]>([]);
+	const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
 
 	useEffect(() => {
 		getPrefectures()
