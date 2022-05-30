@@ -1,4 +1,4 @@
-import styles from '../../styles/Organisms/Header.module.css';
+import styles from '../../styles/Organisms/Header.module.scss';
 
 export const Header: React.VFC<{ headerText: string }> = (props) => {
 	const { headerText } = props;

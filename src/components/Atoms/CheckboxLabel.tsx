@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styles from '../../styles/Atoms/CheckboxLabel.module.css';
+import styles from '../../styles/Atoms/CheckboxLabel.module.scss';
 
 type Prefecture = {
 	prefCode: number;

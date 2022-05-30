@@ -18,10 +18,10 @@
 	-khtml-user-select: none;
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;
-}
-.bl_checkBpxLabel:hover {
-	background: rgba(255, 255, 255, 0.13);
-	transition: background 0.15s;
+	&:hover {
+		background: rgba(255, 255, 255, 0.13);
+		transition: background 0.15s;
+	}
 }
 
 @media screen and (min-width: 425px) {
