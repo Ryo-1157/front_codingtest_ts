@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { GraphProps } from '../../type';
-import styles from '../../styles/Organisms/Graph.module.scss';
+import styles from '../../styles/Organisms/Graph.module.css';
 import '../../styles/Organisms/HighchartsStyleCange.css';
 
 export const Graph: React.VFC<GraphProps> = ({ populationdata }) => {

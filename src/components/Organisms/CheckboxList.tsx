@@ -1,6 +1,6 @@
 import { PrefectureNameList } from '../../type';
 import { CheckboxItem } from '../Molecules/CheckboxItem';
-import styles from '../../styles/Organisms/CheckboxList.module.scss';
+import styles from '../../styles/Organisms/CheckboxList.module.css';
 
 export const CheckboxList: React.VFC<PrefectureNameList> = (props) => {
 	const { prefectures, onChange } = props;

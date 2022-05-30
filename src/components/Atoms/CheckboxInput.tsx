@@ -1,5 +1,5 @@
 import { Prefecture } from '../../type';
-import styles from '../../styles/Atoms/CheckboxInput.module.scss';
+import styles from '../../styles/Atoms/CheckboxInput.module.css';
 
 export const CheckboxInput: React.VFC<Prefecture> = (props) => {
 	const { prefCode, prefName, onChange } = props;
