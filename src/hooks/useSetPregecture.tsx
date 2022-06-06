@@ -12,6 +12,7 @@ export const useSetPrefecture = () => {
 				setPrefectures(res.data.result);
 			})
 			.catch((err: AxiosError<{ error: string }>) => {
+				alert('都道府県の取得に失敗しました。');
 				console.error(err);
 			});
 	}, []);

@@ -18,6 +18,7 @@ export const useSetPrefPopulation = () => {
 					setPrefPopulation(populationList);
 				})
 				.catch((error: AxiosError<{ error: string }>) => {
+					alert('人口の取得に失敗しました');
 					console.error(error);
 					return;
 				});
