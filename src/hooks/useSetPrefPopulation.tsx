@@ -9,18 +9,16 @@ export const useSetPrefPopulation = () => {
 		const populationList = prefPopulation.slice();
 		if (check) {
 			if (populationList.findIndex((value) => value.prefName === prefName) !== -1) return;
-
 			getPopulation(prefCode)
 				.then((res: AxiosResponse<PopulationResponse>) => {
 					populationList.push({
 						prefName: prefName,
 						data: res.data.result.data[0].data,
 					});
-
 					setPrefPopulation(populationList);
 				})
-				// eslint-disable-next-line
 				.catch((error: AxiosError<{ error: string }>) => {
+					console.error(error);
 					return;
 				});
 		} else {

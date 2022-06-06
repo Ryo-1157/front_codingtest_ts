@@ -12,7 +12,7 @@ export const useSetPrefecture = () => {
 				setPrefectures(res.data.result);
 			})
 			.catch((err: AxiosError<{ error: string }>) => {
-				console.log(err);
+				console.error(err);
 			});
 	}, []);
 
