@@ -3,7 +3,7 @@ import { CheckboxItem } from '../Molecules/CheckboxItem';
 import styles from '../../styles/Organisms/CheckboxList.module.scss';
 import React from 'react';
 
-export const CheckboxList: React.VFC<PrefectureNameList> = React.memo((props) => {
+export const CheckboxList: React.FC<PrefectureNameList> = React.memo((props) => {
 	const { prefectures, onChange } = props;
 	return (
 		<>

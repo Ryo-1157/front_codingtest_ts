@@ -8,7 +8,7 @@ type Prefecture = {
 	children: ReactNode;
 };
 
-export const CheckboxLabel: React.VFC<Prefecture> = React.memo((props) => {
+export const CheckboxLabel: React.FC<Prefecture> = React.memo((props) => {
 	const { prefCode, prefName, children } = props;
 	return (
 		<label htmlFor={`prefCode-${prefCode}`} className={styles.bl_checkBpxLabel}>

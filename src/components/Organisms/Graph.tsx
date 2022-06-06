@@ -5,7 +5,7 @@ import styles from '../../styles/Organisms/Graph.module.scss';
 import '../../styles/Organisms/HighchartsStyleCange.css';
 import React from 'react';
 
-export const Graph: React.VFC<GraphProps> = React.memo(({ populationdata }) => {
+export const Graph: React.FC<GraphProps> = React.memo(({ populationdata }) => {
 	const series: Highcharts.SeriesOptionsType[] = [];
 	const categories: string[] = [];
 

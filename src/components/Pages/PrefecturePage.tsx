@@ -5,7 +5,7 @@ import styles from '../../styles/Pages/PrefecturePage.module.scss';
 import { useSetPrefPopulation } from '../../hooks/useSetPrefPopulation';
 import React from 'react';
 
-export const PrefecturePage: React.VFC = React.memo(() => {
+export const PrefecturePage: React.FC = React.memo(() => {
 	const { prefectures } = useSetPrefecture();
 	const { prefPopulation, onChangeChecked } = useSetPrefPopulation();
 
